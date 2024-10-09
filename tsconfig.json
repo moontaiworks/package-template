@@ -5,14 +5,15 @@
     // Specify what module code is generated
     "module": "ESNext",
     // Specify how TypeScript looks up a file from a given module specifier
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
 
     // Specify the root folder contains all ts files
     "rootDir": ".",
     // Specify the base directory to resolve non-relative module names
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"] // => `./src/*`
+      "@/*": ["../src/*"],
+      "~/*": ["../tests/*"]
     },
     "outDir": "./build",
 
@@ -40,7 +41,7 @@
     "skipLibCheck": true,
     "useDefineForClassFields": true
   },
-  "exclude": ["node_modules", "dist"],
+  "exclude": ["node_modules", "dist", "build", "docs", "coverage"],
   "tsc-alias": {
     "resolveFullPaths": true,
     "verbose": true

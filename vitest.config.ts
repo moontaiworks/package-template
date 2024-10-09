@@ -1,3 +1,5 @@
+import { resolve } from "node:path";
+
 import { defineConfig, mergeConfig } from "vitest/config";
 
 import viteConfig from "./vite.config";
@@ -5,6 +7,11 @@ import viteConfig from "./vite.config";
 export default mergeConfig(
   viteConfig,
   defineConfig({
+    resolve: {
+      alias: {
+        "~": resolve(import.meta.dirname, "tests"),
+      },
+    },
     test: {
       coverage: {
         enabled: true,

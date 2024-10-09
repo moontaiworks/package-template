@@ -1,14 +1,23 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "composite": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
     "target": "ES6",
-    "module": "ESNext",
-    // Bundler mode
-    "moduleResolution": "bundler",
 
     "lib": ["ES6", "DOM", "DOM.Iterable"],
 
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "@/*": ["../src/*"]
+    }
   },
-  "include": ["."]
+  "include": ["./**/*.ts"],
+  "exclude": ["./**/*.spec.ts"],
+  "references": [
+    {
+      "path": "../tests"
+    }
+  ]
 }

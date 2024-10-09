@@ -1,4 +1,4 @@
-import { expect, it, vi } from "vitest";
+import { expect, it } from "vitest";
 
 import { max } from "./max";
 
@@ -14,10 +14,10 @@ it("returns the maximum of zero and a number", () => {
   expect(max(0, 10)).toBe(10);
 });
 
-it("should call the Math.max function", () => {
-  const spy = vi.spyOn(Math, "max");
+it("should call the Math.max function", async () => {
+  const { spyMax } = await import("~/shared/spy-max");
 
   max(1, 2);
-  expect(spy).toHaveBeenCalled();
-  spy.mockRestore();
+  expect(spyMax).toHaveBeenCalled();
+  spyMax.mockRestore();
 });
