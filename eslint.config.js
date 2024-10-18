@@ -1,10 +1,9 @@
 // @ts-check
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
-import eslintPluginImportX from "eslint-plugin-import-x";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
+import perfectionist from "eslint-plugin-perfectionist";
 import globals from "globals";
-import { config as typedConfig, configs as tsConfigs } from "typescript-eslint";
+import { configs as tsConfigs, config as typedConfig } from "typescript-eslint";
 
 export default typedConfig(
   { ignores: ["node_modules", "dist", "build", "docs", "coverage"] },
@@ -23,30 +22,41 @@ export default typedConfig(
   {
     languageOptions: {
       parserOptions: {
-        projectService: true,
         ecmaVersion: "latest",
+        projectService: true,
         sourceType: "module",
         tsconfigRootDir: import.meta.dirname,
       },
     },
   },
   pluginJs.configs.recommended,
-  eslintPluginImportX.flatConfigs.recommended,
-  eslintPluginImportX.flatConfigs.typescript,
   {
-    files: ["**/*.ts"],
     extends: [
       ...tsConfigs.strictTypeChecked,
       ...tsConfigs.stylisticTypeChecked,
     ],
+    files: ["**/*.ts"],
   },
   {
-    plugins: {
-      "simple-import-sort": simpleImportSort,
-    },
+    extends: [perfectionist.configs["recommended-natural"]],
     rules: {
-      "simple-import-sort/imports": "error",
-      "simple-import-sort/exports": "error",
+      "perfectionist/sort-imports": [
+        "error",
+        {
+          groups: [
+            "type",
+            "builtin",
+            "external",
+            "internal-type",
+            "internal",
+            ["parent-type", "sibling-type", "index-type"],
+            ["parent", "sibling", "index"],
+            "object",
+            "unknown",
+          ],
+          internalPattern: ["~/**", "@/**"],
+        },
+      ],
     },
   },
   eslintConfigPrettier,

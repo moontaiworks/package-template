@@ -16,8 +16,8 @@ export default mergeConfig(
       coverage: {
         enabled: true,
         include: ["src/**/*.ts"],
-        reportOnFailure: true,
         reporter: ["text", "text-summary", "json", "html", "cobertura"],
+        reportOnFailure: true,
       },
       outputFile: {
         junit: "./coverage/junit-report.xml",
