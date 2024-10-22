@@ -84,6 +84,9 @@ jobs:
       - name: Build
         run: pnpm build
 
+      - name: Docs
+        run: pnpm docs
+
       - name: Show version
         env:
           version: ${{ steps.version.outputs.version }}

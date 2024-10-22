@@ -35,7 +35,8 @@
     }
   },
   "scripts": {
-    "build": "rm -rf dist build docs && tsc --project src/tsconfig.build.json && tsc-alias --project src/tsconfig.build.json && vite build && typedoc",
+    "build": "rm -rf dist build && tsc --project src/tsconfig.build.json && tsc-alias --project src/tsconfig.build.json && vite build",
+    "docs": "rm -rf docs && typedoc",
     "test": "vitest",
     "lint": "eslint ; prettier --check .",
     "lint:fix": "eslint --fix ; prettier --write .",
