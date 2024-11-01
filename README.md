@@ -10,9 +10,7 @@
 - [x] [Vitest](https://github.com/vitest-dev/vitest): Tests and [Coverage](https://github.com/vitest-dev/vitest/tree/main/packages/coverage-v8)
 - [x] [ESLint](https://eslint.org) + [Prettier](https://prettier.io): Coding Style & Formatter
   - [Husky](https://github.com/typicode/husky) + [Lint-staged](https://github.com/okonet/lint-staged): Pre-commit hooks
-  - ~~[Airbnb Coding Style](https://github.com/airbnb/javascript)~~
-  - Auto [organize imports](https://github.com/un-js/eslint-plugin-import-x).
-  - Auto sort [imports](https://github.com/lydell/eslint-plugin-simple-import-sort).
+  - Auto sort and organize imports and objects by [Perfectionist](https://github.com/azat-io/eslint-plugin-perfectionist)
 - [x] [Commitlint](https://github.com/conventional-changelog/commitlint): Commit message linting to follow [Conventional Commits](https://www.conventionalcommits.org)
 - [x] Auto versioning, Changelog and Release to GitHub release and NPM by using [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version)
   - Version is bumped by parsing conventional commit messages
@@ -95,3 +93,4 @@ max(1, 2); // 2
 ## API Document
 
 See the [API documentation](https://moontaiworks.github.io/package-template/).
+a
