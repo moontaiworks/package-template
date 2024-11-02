@@ -1,6 +1,7 @@
 // @ts-check
 import pluginJs from "@eslint/js";
 import eslintConfigPrettier from "eslint-config-prettier";
+import eslintPluginImportX from "eslint-plugin-import-x";
 import perfectionist from "eslint-plugin-perfectionist";
 import globals from "globals";
 import { configs as tsConfigs, config as typedConfig } from "typescript-eslint";
@@ -30,6 +31,8 @@ export default typedConfig(
     },
   },
   pluginJs.configs.recommended,
+  eslintPluginImportX.flatConfigs.recommended,
+  eslintPluginImportX.flatConfigs.typescript,
   {
     extends: [
       ...tsConfigs.strictTypeChecked,
