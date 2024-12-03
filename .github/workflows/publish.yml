@@ -79,7 +79,7 @@ jobs:
 
       - name: Versioning and tagging
         id: version
-        run: sh scripts/version.sh && git push --follow-tags
+        run: sh scripts/version.sh
 
       - name: Build
         run: pnpm build
@@ -96,6 +96,9 @@ jobs:
           echo "commit: $commit"
           echo "message: $message"
           echo "changelog: $changelog"
+      
+      - name: Push changes back to repository
+        run: git push --follow-tags
 
       - name: Deploy docs to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
@@ -111,6 +114,6 @@ jobs:
             ${{ steps.version.outputs.changelog }}
 
       - name: Publish the release to NPM
-        run: npm publish --provenance --tag latest
+        run: pnpm publish --provenance --tag latest
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
