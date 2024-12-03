@@ -18,7 +18,7 @@ echo "message=$(git log -1 --pretty=%B)" >> $GITHUB_OUTPUT
 # extract changelog
 DELIMITER=$(dd if=/dev/urandom bs=15 count=1 status=none | base64)
 echo "changelog<<$DELIMITER" >> $GITHUB_OUTPUT
-echo "$(sed -n "/## \[$version\]/,/^## /p" CHANGELOG.md)" >> $GITHUB_OUTPUT
+echo "$(sed -n "/## \[$version\]/,/^## /p" CHANGELOG.md | sed '$d')" >> $GITHUB_OUTPUT
 echo "$DELIMITER" >> $GITHUB_OUTPUT
 
 # cleanup to remove added tag

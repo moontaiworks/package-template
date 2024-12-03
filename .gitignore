@@ -17,6 +17,7 @@ docs/
 coverage/
 dist-ssr
 *.local
+GITHUB_OUTPUT
 
 # Editor directories and files
 .idea
