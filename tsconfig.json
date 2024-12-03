@@ -12,7 +12,7 @@
     // Specify the base directory to resolve non-relative module names
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["../src/*"],
       "~/*": ["../tests/*"]
     },
     "outDir": "./build",
