@@ -6,7 +6,7 @@
     "access": "public"
   },
   "version": "0.0.0",
-  "description": "A npm package.",
+  "description": "package-template",
   "author": "moontaiworks",
   "license": "UNLICENSED",
   "homepage": "https://moontaiworks.github.io/package-template",
@@ -17,9 +17,7 @@
     "type": "git",
     "url": "git+https://github.com/moontaiworks/package-template.git"
   },
-  "keywords": [
-    "template"
-  ],
+  "keywords": [],
   "files": [
     "build",
     "dist"
