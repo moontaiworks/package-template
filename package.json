@@ -46,8 +46,8 @@
     "prepare": "husky || true"
   },
   "lint-staged": {
-    "*.{js,ts}": "eslint --cache --fix",
-    "*.*": "prettier --write --ignore-unknown"
+    "*.{js,ts}": "eslint --cache",
+    "*.*": "prettier --check --ignore-unknown"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.5.0",
