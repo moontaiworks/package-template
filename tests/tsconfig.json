@@ -7,7 +7,7 @@
     "target": "ESNext",
     "baseUrl": "../src"
   },
-  "include": ["./**/*.ts", "../src/**/*.spec.ts"],
+  "include": ["./**/*.ts", "../src/**/*.spec.ts", "../src/**/*.d.ts"],
   "references": [
     {
       "path": "../src"
