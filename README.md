@@ -38,8 +38,8 @@ For first, you have setup the project name in `package.json` and `README.md`. Yo
 ```bash
 YOUR_GITHUB_USER="your-user-name"
 YOUR_REPO_NAME="your-awesome-package-name"
-sed -i "s/moontaiworks/${YOUR_GITHUB_USER}/g" package.json README.md CONTRIGUTING.md .github/workflows/*
-sed -i "s/package[-_]template/${YOUR_REPO_NAME}/g" package.json README.md CONTRIGUTING.md .github/workflows/*
+sed -i "s/moontaiworks/${YOUR_GITHUB_USER}/g" package.json README.md CONTRIBUTING.md .github/workflows/*
+sed -i "s/package[-_]template/${YOUR_REPO_NAME}/g" package.json README.md CONTRIBUTING.md .github/workflows/*
 rm -rf src/calculator tests/calculator tests/shared
 echo "" > src/index.ts
 ```
